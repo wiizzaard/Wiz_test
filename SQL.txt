@@ -48,9 +48,10 @@ ALTER TABLE BOOKS ADD Years integer;
 
 
 /*change values in column “Years”:*/
+/*or, maybe, “YEAH!!s” >;-]]]]]]]]]]*/
 
 update books set years='1869' where id=1;
 update books set years='1877' where id=2;
 update books set years='1957' where id=3;
 update books set years='0001' where id=4;
-;
+/*Just editin' da file, addin' some comments, some bla-bla-bla etc.. Problem?))*/
