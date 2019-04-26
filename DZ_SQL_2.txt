@@ -1,0 +1,15 @@
+﻿7.
+select Player from goal join game on game.ID=goal.matchid where stadium = 'National Stadium, Warsaw';
+
+8.
+SELECT DISTINCT (player) FROM goal JOIN game ON goal.matchid=game.id WHERE (team1='GER' or team2='GER') and teamid!='GER'
+
+9.
+SELECT teamname, count (gtime)
+  FROM eteam JOIN goal ON id=teamid group BY teamname
+ ORDER BY teamname
+
+10.
+SELECT stadium, count (gtime)
+  FROM game JOIN goal ON id=matchid group BY stadium
+ ORDER BY stadium

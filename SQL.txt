@@ -1,0 +1,56 @@
+﻿BEGIN TRANSACTION;
+
+/* Create a table called NAMES */
+CREATE TABLE CUSTOMERS(CustomerID integer PRIMARY KEY, CustomerName text,  City text, PostalCode integer, Country text);
+
+/* Create few records in this table */
+INSERT INTO CUSTOMERS VALUES(1,'Alfreds Futterkiste', 'Berlin',	'12209',	'Germany');
+INSERT INTO CUSTOMERS VALUES(2,'Ana Trujillo', 'Mexico','05021','Mexico');
+INSERT INTO CUSTOMERS VALUES(3,'Antonio Moreno','Mexico','05023','Mexico');
+INSERT INTO CUSTOMERS VALUES(4,'Thomas Hardy','London','27976', 'UK' );
+INSERT INTO CUSTOMERS VALUES(5,'Christina Berglund','Luleå', '95822','Sweden');
+COMMIT;
+
+/*Add column “Phone”:*/
+ALTER TABLE CUSTOMERS ADD Phone integer;
+INSERT INTO CUSTOMERS VALUES (6, 'ANNA', 'Kharkiv', '61000', 'Ukraine', '50813479670');
+
+/*Get all values from table CUSTOMERS*/
+Select * FROM CUSTOMERS;
+select CustomerName from Customers where CustomerName LIKE 'a%' and LIKE '%a';
+
+***********************************************************************************
+
+BEGIN TRANSACTION;
+
+/* Create a table called NAMES */
+CREATE TABLE AUTHORS (ID integer PRIMARY KEY, Name text);
+
+/* Create few records in this table */
+INSERT INTO AUTHORS VALUES(1,'Leo Tolstoy');
+INSERT INTO AUTHORS VALUES(2,'Ayn Rand');
+INSERT INTO AUTHORS VALUES(3,'Stanislav Zuiko');
+
+COMMIT;
+
+CREATE TABLE BOOKS (ID integer PRIMARY KEY, AuthorID integer, Name text);
+
+/* Create few records in this table */
+INSERT INTO BOOKS VALUES(1, 1, 'War And Peace');
+INSERT INTO BOOKS VALUES(2, 1, 'Anna Karenina');
+INSERT INTO BOOKS VALUES(3, 2, 'Atlas Shrugged');
+INSERT INTO BOOKS VALUES(4, NULL, 'Bible');
+
+COMMIT;
+
+/*Add column “Years”:*/
+ALTER TABLE BOOKS ADD Years integer;
+
+
+/*change values in column “Years”:*/
+
+update books set years='1869' where id=1;
+update books set years='1877' where id=2;
+update books set years='1957' where id=3;
+update books set years='0001' where id=4;
+;
